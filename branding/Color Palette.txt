@@ -1,0 +1,16 @@
+Color Palette Codes
+
+Pink
+#D44D7C
+
+Blue
+#1870C7
+
+Yellow
+#E5BA47
+
+White
+#FEFDFD
+
+Black
+#181818

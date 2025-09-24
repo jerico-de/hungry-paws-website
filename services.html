@@ -6,7 +6,7 @@
   <title>Hungry Paws | Services</title>
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins&family=Chewy&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -24,24 +24,102 @@
   </header>
 
   <!-- Grooming -->
-  <section id="grooming" class="service">
-    <h2>🐾 Grooming 🐾</h2>
-    <img src="images/grooming.jpg" alt="Grooming Service">
-    <p>Our expert groomers make sure your pets are pampered, clean, and styled with love and care.</p>
-    <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">Book Now</a>
-  </section>
+<section id="grooming" class="service">
+  <h2>🐾 Grooming 🐾</h2>
+    <p>
+      Our grooming team is dedicated to making pets look great and feel even better. Safe, gentle, and joyful—creating happy tails every time!
+    </p>
+
+  <!-- Clickable Image (Lightbox) -->
+  <a href="#groomingImage" class="lightbox-trigger">
+    <img src="images/grooming.jpg" alt="Grooming Service" class="clickable-image">
+  </a>
+
+  <!-- Book Now Button -->
+  <button class="btn" onclick="openModal('groomingModal')">Book Now</button>
+</section>
+
+<!-- Grooming Lightbox -->
+<div id="groomingImage" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="images/grooming.jpg" alt="Grooming Enlarged">
+</div>
+
+<!-- Modal Structure -->
+<div id="groomingModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('groomingModal')">&times;</span>
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSf4FK0O3O7tnIM04ruP9Zovt0Htr_lBaJW0-NGJbd1y-o0KLA/viewform?embedded=true" 
+      width="100%" 
+      height="600" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+</div>
 
   <!-- Hotel -->
   <section id="hotel" class="service">
     <h2>🐾 Pet Hotel 🐾</h2>
-    <img src="images/hotel.jpg" alt="Pet Hotel Service">
-    <p>A safe and cozy place where your pets can stay while you’re away, with constant love and care.</p>
-    <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn">Book Now</a>
-  </section>
+        <p>
+    From tiny paws to gentle giants, our pet hotel gives every guest a cozy space 
+    to rest, play, and feel loved. Because while you’re away, we’re here creating 
+    happy tails every day!
+  </p>
+
+  <!-- Clickable Image (Lightbox) -->
+  <a href="#hotelImage" class="lightbox-trigger">
+    <img src="images/hotel.jpg" alt="Pet Hotel Service" class="clickable-image">
+  </a>
+
+  <!-- Book Now Button -->
+  <button onclick="openHotelForm()" class="btn">Book Now</button>
+</section>
+
+<!-- Lightbox for Hotel Image -->
+<div id="hotelImage" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="images/hotel.jpg" alt="Hotel Rates Enlarged">
+</div>
+
+<!-- Hotel Booking Modal -->
+<div id="hotelFormModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeHotelForm()">&times;</span>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfKx5RZJzvFYc-nd_Bye_yaeCv3jjdOtA2eHtjLWWeicd7wug/viewform?embedded=true"
+            width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">
+      Loading…
+    </iframe>
+  </div>
+</div>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 The Hungry Paws. All rights reserved.</p>
   </footer>
 </body>
+
+
+<script>
+
+// Grooming Modal Functions
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Hotel Modal Functions
+function openHotelForm() {
+  document.getElementById("hotelFormModal").style.display = "flex";
+}
+function closeHotelForm() {
+  document.getElementById("hotelFormModal").style.display = "none";
+}
+</script>
+
 </html>

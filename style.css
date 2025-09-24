@@ -16,14 +16,16 @@ body {
 
 /* Logo-style headings */
 h1, h2, h3 {
-  font-family: 'Fredoka', sans-serif;
+  font-family: 'Chewy', sans-serif;
   font-weight: 700;
+  letter-spacing: 2px;
   color: #D44D7C; 
 }
 
 #welcome h2 {
-  font-family: 'Fredoka', sans-serif;
-  font-weight: 700;
+  font-family: 'Chewy', cursive;
+  font-weight: 800;
+  letter-spacing: 4px;
   color: #ffffff; 
 }
 
@@ -89,7 +91,7 @@ section {
 }
 
 section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -124,28 +126,21 @@ section p {
 }
 
 #welcome h2 {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   margin-bottom: 1rem;
   position: relative;
   z-index: 2;
 }
 
-#welcome p {
-  max-width: 700px;
-  margin: auto;
-  font-size: 1.2rem;
-  position: relative;
-  z-index: 2;
-}
 
 /* ===== Intro Section ===== */
 #intro {
   background: #FEFDFD;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 2rem auto;
 }
 
@@ -155,7 +150,7 @@ section p {
   color: #333333;
 }
 
-/* ===== Promotions & Testimonials ===== */
+/* ===== Shop & Promotions & Testimonials ===== */
 .carousel {
   display: flex;
   justify-content: center;
@@ -188,15 +183,17 @@ section p {
 
 /* ===== Services ===== */
 .service {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
-.service img {
+.service img,
+.clickable-image {
+  display: block;
+  margin: 0 auto 1rem auto;
   width: 100%;
   max-width: 500px;
   border-radius: 10px;
-  margin-bottom: 1rem;
   border: 2px solid #1870C7;
 }
 
@@ -214,6 +211,109 @@ section p {
 
 .btn:hover {
   background: #B63E68;
+}
+
+/* Hotel Section */
+.hotel-section {
+  background-color: #eaeaea;
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+
+.hotel-section p {
+  margin: 1rem auto 2rem;
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* Small Image */
+.clickable-image {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+.clickable-image:hover {
+  transform: scale(1.02);
+}
+
+/* Lightbox effect */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox:target img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+/* Lightbox Close Button */
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Modal Overlay */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7); /* dark overlay */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #D44D7C;
 }
 
 /* ===== Contact Page ===== */

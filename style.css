@@ -5,80 +5,54 @@
   box-sizing: border-box;
 }
 
-/* ===== Fonts ===== */
+/* ===== Body & Fonts ===== */
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: #181818;
   background: #FEFDFD;
 }
 
-/* Logo-style headings */
+/* Headings */
 h1, h2, h3 {
-  font-family: 'Chewy', sans-serif;
+  font-family: 'Chewy', cursive;
   font-weight: 700;
   letter-spacing: 2px;
-  color: #D44D7C; 
-}
-
-#welcome h2 {
-  font-family: 'Chewy', cursive;
-  font-weight: 800;
-  letter-spacing: 4px;
-  color: #ffffff; 
+  color: #ff69b4;
 }
 
 /* ===== Header & Nav ===== */
-header {
-  background: #ffffff;
-  color: #FEFDFD;
-  padding: 1rem 2rem;
+.navbar-custom {
+  background-color: #fae9ee;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   text-align: center;
-  border-bottom: 3px solid #D44D7C;
+  padding: 1rem 0;
+  position: static;
+  z-index: 10;
 }
 
-header .logo img {
-  height: auto; 
-  max-width: 300px;
-  display: block;
-  margin: 0 auto 0.5rem auto;
+.logo-img {
+  width: 250px;
+  height: auto;
 }
 
-nav {
-  margin-top: 0.5rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  padding: 0;
-  margin: 0;
-  border-radius: 5px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #000000; 
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+.nav-link {
+  color: #ff69b4 !important;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-nav ul li a:hover {
-  background-color: #E5BA47;
-  color: #FEFDFD;
+.nav-link:hover,
+.nav-link.active {
+  background-color: #ff69b4;
+  color: #fff !important;
 }
 
-nav ul li a.active {
-  background: #D44D7C;
-  color: #FEFDFD;
-  font-weight: bold;
-}
-
-nav ul li a.active::after {
+.nav-link.active::after {
   content: " 🐾";
   font-size: 1rem;
 }
@@ -101,45 +75,82 @@ section p {
   margin-bottom: 2rem;
 }
 
-/* ===== Welcome / Hero ===== */
-#welcome {
+/* ===== Hero Section ===== */
+#hero {
   position: relative;
-  max-width: 1100px;
-  margin: 2rem auto;
-  background: url("images/welcome.JPEG") center/cover no-repeat;
-  border-radius: 20px;
-  color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  background: url('images/welcome.JPEG') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 10rem 2rem;
   overflow: hidden;
+  max-width: 100%;
 }
 
-#welcome .overlay {
+.hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.338);
-  border-radius: 20px;
+  inset: 0;
+  background: rgba(0,0,0,0.774);
   z-index: 1;
 }
 
-#welcome h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
+.hero-content {
   position: relative;
+  z-index: 2;
+  max-width: 900px;
+  color: #fff;
+  padding: 0 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  transform: translateY(-100px);
+  color: white;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  transform: translateY(-50px);
+}
+
+.hero-btn {
+  background-color: #ff69b4;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, #fff8f8 100%);
   z-index: 2;
 }
 
-
-/* ===== Intro Section ===== */
+/* ===== Intro ===== */
 #intro {
   background: #FEFDFD;
-  padding: 2rem 2rem;
+  padding: 2rem;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   max-width: 1000px;
   margin: 2rem auto;
 }
@@ -147,56 +158,107 @@ section p {
 #intro p {
   font-size: 1rem;
   line-height: 1.8;
-  color: #333333;
+  color: #333;
 }
 
-/* ===== Shop & Promotions & Testimonials ===== */
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+/* ===== Carousel / Promotions / Testimonials ===== */
+.carousel-section {
+  background-color: #fae9ee;
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 30px;
+  margin: 40px auto;
+  width: 90%;
+  position: relative;
 }
 
-.carousel img {
-  width: auto;
-  height: 300px;
-  max-width: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 3px solid #ffffff;
+.section-title {
+  color: #ff69b4;
+  font-family: 'Chewy', cursive;
+  margin-bottom: 20px;
 }
 
-.carousel button {
-  background: #D44D7C;
-  border: none;
-  padding: 0.5rem 1rem;
+.carousel-inner img {
+  height: 500px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  color: #FEFDFD;
 }
 
-.carousel button:hover {
-  background: #B63E68;
+.carousel-inner img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,182,193,0.6);
 }
 
-/* ===== Services ===== */
-.service {
-  margin-bottom: 2rem;
+/* Carousel buttons (prev/next) */
+.carousel-section .custom-carousel-btn {
+  position: absolute;       /* position relative to carousel */
+  top: 50%;                 /* vertical center */
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff69b4 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  pointer-events: all;
+}
+
+/* Position prev/next outside carousel */
+.carousel-section .carousel-control-prev {
+  left: -20px; /* adjust if needed */
+}
+
+.carousel-section .carousel-control-next {
+  right: -20px; /* adjust if needed */
+}
+
+/* Indicators */
+.carousel-indicators {
+  position: static;
+  margin-top: 15px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ff69b4;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 6px;
+}
+
+.carousel-indicators .active {
+  background-color: #ff1493;
+}
+
+/* ===== Services & Hotel ===== */
+.service, .hotel-section {
+  background-color: #fae9ee;
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  max-width: 1000px;
+  margin: 2rem auto;
   text-align: center;
 }
 
-.service img,
-.clickable-image {
+.service img, .clickable-image {
   display: block;
   margin: 0 auto 1rem auto;
   width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  border: 2px solid #1870C7;
+  max-width: 700px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
+.service img:hover, .clickable-image:hover {
+  transform: scale(1.02);
+}
+
+/* ===== Buttons ===== */
 .btn {
   display: inline-block;
   padding: 0.7rem 1.5rem;
@@ -206,49 +268,19 @@ section p {
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
   background: #B63E68;
+  transform: scale(1.05);
 }
 
-/* Hotel Section */
-.hotel-section {
-  background-color: #eaeaea;
-  padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  margin: 2rem auto;
-  max-width: 900px;
-}
-
-.hotel-section p {
-  margin: 1rem auto 2rem;
-  max-width: 700px;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-/* Small Image */
-.clickable-image {
-  width: 100%;
-  max-width: 700px;
-  border-radius: 15px;
-  cursor: pointer;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease;
-}
-.clickable-image:hover {
-  transform: scale(1.02);
-}
-
-/* Lightbox effect */
+/* ===== Lightbox ===== */
 .lightbox {
   display: none;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
@@ -262,17 +294,8 @@ section p {
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.lightbox:target {
-  display: flex;
-}
+.lightbox:target { display: flex; }
 
-.lightbox:target img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 15px;
-}
-
-/* Lightbox Close Button */
 .lightbox .close {
   position: absolute;
   top: 20px;
@@ -283,19 +306,17 @@ section p {
   font-weight: bold;
 }
 
-/* Modal Overlay */
+/* ===== Modal ===== */
 .modal {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7); /* dark overlay */
+  inset: 0;
+  background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
-/* Modal Box */
 .modal-content {
   background: #fff;
   padding: 1rem;
@@ -306,7 +327,6 @@ section p {
   position: relative;
 }
 
-/* Close Button */
 .close {
   position: absolute;
   top: 10px;
@@ -315,6 +335,15 @@ section p {
   cursor: pointer;
   color: #D44D7C;
 }
+
+.thank-you-modal {
+  z-index: 1055; /* ensures it sits above everything else */
+}
+
+.thank-you-modal .modal-content {
+  background-color: #fff; /* optional if you want custom bg */
+}
+
 
 /* ===== Contact Page ===== */
 .contact-form {
@@ -325,6 +354,13 @@ section p {
   margin: auto;
 }
 
+.contact-section .container {
+  border-radius: 50px; 
+  overflow: hidden;       
+  background-color: #fae9ee; 
+  padding: 3rem 2rem;  
+}
+
 .contact-form input,
 .contact-form textarea {
   padding: 0.7rem;
@@ -332,14 +368,9 @@ section p {
   border-radius: 5px;
 }
 
-.contact-form button {
-  align-self: flex-start;
-}
+.contact-form button { align-self: flex-start; }
 
-.contact-info {
-  margin-top: 2rem;
-  text-align: center;
-}
+.contact-info { margin-top: 2rem; text-align: center; }
 
 /* ===== Footer ===== */
 footer {
@@ -352,20 +383,8 @@ footer {
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .carousel {
-    flex-direction: column;
-  }
-
-  #welcome {
-    padding: 4rem 1rem;
-  }
-
-  #welcome h2 {
-    font-size: 2rem;
-  }
+  nav ul { flex-direction: column; gap: 0.5rem; }
+  .carousel { flex-direction: column; }
+  #welcome { padding: 4rem 1rem; }
+  #welcome h2 { font-size: 2rem; }
 }

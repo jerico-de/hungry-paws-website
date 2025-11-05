@@ -29,3 +29,4 @@ Built using HTML, CSS, JavaScript, and Bootstrap for a clean, modern, and mobile
 
 1. Clone the repository:
    ```bash
+   git clone https://github.com/jerico-de/hungry-paws-website.git

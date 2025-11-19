@@ -5,11 +5,11 @@ Built using HTML, CSS, JavaScript, and Bootstrap for a clean, modern, and mobile
 
 ## Features
 
-- 🐾 Pet Grooming & Hotel Services with responsive grid layout.  
-- 🎠 Image Carousel for promotions, shop items, and testimonials.  
-- 📞 Contact Form with working feedback modal.  
-- 💬 Thank You Modal with functional close button.  
-- 🌐 Fully responsive layout with consistent design across all pages.
+- Pet Grooming & Hotel Services with responsive grid layout.  
+- Image Carousel for promotions, shop items, and testimonials.  
+- Contact Form with working feedback modal.  
+- Thank You Modal with functional close button.  
+- Fully responsive layout with consistent design across all pages.
 
 ## Technologies Used
 
